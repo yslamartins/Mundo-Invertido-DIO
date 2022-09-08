@@ -6,7 +6,9 @@ const txtEmail = document.getElementById('txtEmail')
 const txtLevel = document.getElementById('txtLevel')
 const txtCharacter = document.getElementById('txtCharacter')
 
-const btnSubscribe = document.getElementById('btnSubscribe') 
+const btnSubscribe = document.getElementById('btnSubscribe')
+
+const subscriptionsList = document.getElementById('subscriptions')
 
 btnSubscribe.addEventListener('click', async () => {
   const subscription ={
@@ -18,12 +20,13 @@ btnSubscribe.addEventListener('click', async () => {
 
   //Salvar no banco de dados
   const subscriptionId = await subscribeToHellfireClub(subscription)
-  console.log("Inscrito: ${subscriptionId}")
   
   txtName.value = ''
   txtEmail.value =''
   txtLevel.value =''
   txtCharacter.value = ''
+
+  alert('Inscrito com êxito')
   
 })
 
